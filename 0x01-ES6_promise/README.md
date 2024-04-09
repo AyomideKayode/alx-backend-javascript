@@ -273,11 +273,40 @@ photo-profile-1 Guillaume Salva
 bob@dylan:~$ 
 ```
 
+4. [Simple promise](./4-user-promise.js) :
+
+Using the following prototype
+
+```bash
+function signUpUser(firstName, lastName) {
+}
+```
+
+That returns a resolved promise with this object:
+
+```bash
+{
+  firstName: value,
+  lastName: value,
+}
+```
+
+```bash
+bob@dylan:~$ cat 4-main.js
+import signUpUser from "./4-user-promise";
+
+console.log(signUpUser("Bob", "Dylan"));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 4-main.js 
+Promise { { firstName: 'Bob', lastName: 'Dylan' } }
+bob@dylan:~$ 
+```
+
 ## Tasks
 
 | Task | File |
 | ---- | ---- |
-| 4. Simple promise | [4-user-promise.js](./4-user-promise.js) |
 | 5. Reject the promises | [5-photo-reject.js](./5-photo-reject.js) |
 | 6. Handle multiple promises | [6-final-user.js](./6-final-user.js) |
 | 7. Load balancer | [7-load_balancer.js](./7-load_balancer.js) |
