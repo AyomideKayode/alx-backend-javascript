@@ -183,11 +183,46 @@ true
 bob@dylan:~$ 
 ```
 
+1. [Don't make a promise...if you know you can't keep it](./1-promise.js) :
+
+Using the prototype below, return a promise. The parameter is a boolean.
+
+```bash
+getFullResponseFromAPI(success)
+```
+
+- When the argument is:
+  - true
+    - resolve the promise by passing an object with 2 attributes:
+      - `status`: `200`
+      - `body`: `'Success'`
+
+  - false
+    - reject the promise with an error object with the message `The fake API is not working currently`
+
+Try testing it out for yourself
+
+```bash
+bob@dylan:~$ cat 1-main.js
+import getFullResponseFromAPI from './1-promise';
+
+console.log(getFullResponseFromAPI(true));
+console.log(getFullResponseFromAPI(false));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 1-main.js 
+Promise { { status: 200, body: 'Success' } }
+Promise {
+  <rejected> Error: The fake API is not working currently
+    ...
+    ...
+bob@dylan:~$ 
+```
+
 ## Tasks
 
 | Task | File |
 | ---- | ---- |
-| 1. Don't make a promise...if you know you can't keep it | [1-promise.js](./1-promise.js) |
 | 2. Catch me if you can! | [2-then.js](./2-then.js) |
 | 3. Handle multiple successful promises | [3-all.js](./3-all.js) |
 | 4. Simple promise | [4-user-promise.js](./4-user-promise.js) |
