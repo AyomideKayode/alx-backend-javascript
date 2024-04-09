@@ -166,11 +166,27 @@ module.exports = {
 }
 ```
 
+0. [Keep every promise you make and only make promises you can keep](./0-promise.js) :
+
+Return a Promise using this prototype function getResponseFromAPI()
+
+```bash
+bob@dylan:~$ cat 0-main.js
+import getResponseFromAPI from "./0-promise.js";
+
+const response = getResponseFromAPI();
+console.log(response instanceof Promise);
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 0-main.js 
+true
+bob@dylan:~$ 
+```
+
 ## Tasks
 
 | Task | File |
 | ---- | ---- |
-| 0. Keep every promise you make and only make promises you can keep | [0-promise.js](./0-promise.js) |
 | 1. Don't make a promise...if you know you can't keep it | [1-promise.js](./1-promise.js) |
 | 2. Catch me if you can! | [2-then.js](./2-then.js) |
 | 3. Handle multiple successful promises | [3-all.js](./3-all.js) |
