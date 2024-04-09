@@ -13,7 +13,7 @@ async function handleProfileSignup(firstName, lastName, fileName) {
   } catch (error) {
     allSettled.push({
       status: 'rejected',
-      value: `Error: ${error.message}`,
+      value: error.toString(),
     });
   }
 
@@ -26,7 +26,7 @@ async function handleProfileSignup(firstName, lastName, fileName) {
   } catch (error) {
     allSettled.push({
       status: 'rejected',
-      value: `Error: ${error.message}`,
+      value: error.toString(),
     });
   }
   return allSettled;
