@@ -219,11 +219,40 @@ Promise {
 bob@dylan:~$ 
 ```
 
+2. [Catch me if you can!](./2-then.js) :
+
+Using the function prototype below
+
+```bash
+function handleResponseFromAPI(promise)
+```
+
+Append three handlers to the function:
+
+- When the Promise resolves, return an object with the following attributes
+  - `status`: `200`
+  - `body`: `success`
+
+- When the Promise rejects, return an empty `Error` object
+- For every resolution, log `Got a response from the API` to the console
+
+```bash
+bob@dylan:~$ cat 2-main.js
+import handleResponseFromAPI from "./2-then";
+
+const promise = Promise.resolve();
+handleResponseFromAPI(promise);
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 2-main.js 
+Got a response from the API
+bob@dylan:~$ 
+```
+
 ## Tasks
 
 | Task | File |
 | ---- | ---- |
-| 2. Catch me if you can! | [2-then.js](./2-then.js) |
 | 3. Handle multiple successful promises | [3-all.js](./3-all.js) |
 | 4. Simple promise | [4-user-promise.js](./4-user-promise.js) |
 | 5. Reject the promises | [5-photo-reject.js](./5-photo-reject.js) |
