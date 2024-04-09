@@ -303,11 +303,37 @@ Promise { { firstName: 'Bob', lastName: 'Dylan' } }
 bob@dylan:~$ 
 ```
 
+5. [Reject the promises](./5-photo-reject.js) :
+
+Write and export a function named `uploadPhoto`. It should accept one argument `fileName` (string).
+
+The function should return a Promise rejecting with an Error and the string `$fileName cannot be processed`
+
+```bash
+export default function uploadPhoto(filename) {
+
+}
+```
+
+```bash
+bob@dylan:~$ cat 5-main.js
+import uploadPhoto from './5-photo-reject';
+
+console.log(uploadPhoto('guillaume.jpg'));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 5-main.js 
+Promise {
+  <rejected> Error: guillaume.jpg cannot be processed
+  ..
+    ..
+bob@dylan:~$ 
+```
+
 ## Tasks
 
 | Task | File |
 | ---- | ---- |
-| 5. Reject the promises | [5-photo-reject.js](./5-photo-reject.js) |
 | 6. Handle multiple promises | [6-final-user.js](./6-final-user.js) |
 | 7. Load balancer | [7-load_balancer.js](./7-load_balancer.js) |
 | 8. Throw error / try catch | [8-try.js](./8-try.js) |
