@@ -330,11 +330,38 @@ Promise {
 bob@dylan:~$ 
 ```
 
+6. [Handle multiple promises](./6-final-user.js) :
+
+Import `signUpUser` from `4-user-promise.js` and `uploadPhoto` from `5-photo-reject.js`.
+
+Write and export a function named `handleProfileSignup`. It should accept three arguments `firstName` (string), `lastName` (string), and `fileName` (string). The function should call the two other functions. When the promises are all settled it should return an array with the following structure:
+
+```bash
+[
+    {
+      status: status_of_the_promise,
+      value: value or error returned by the Promise
+    },
+    ...
+  ]
+```
+
+```bash
+bob@dylan:~$ cat 6-main.js
+import handleProfileSignup from './6-final-user';
+
+console.log(handleProfileSignup("Bob", "Dylan", "bob_dylan.jpg"));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 6-main.js 
+Promise { <pending> }
+bob@dylan:~$ 
+```
+
 ## Tasks
 
 | Task | File |
 | ---- | ---- |
-| 6. Handle multiple promises | [6-final-user.js](./6-final-user.js) |
 | 7. Load balancer | [7-load_balancer.js](./7-load_balancer.js) |
 | 8. Throw error / try catch | [8-try.js](./8-try.js) |
 | 9. Throw an error | [9-try.js](./9-try.js) |
