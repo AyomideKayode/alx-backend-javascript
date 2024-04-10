@@ -166,6 +166,8 @@ module.exports = {
 }
 ```
 
+## Tasks
+
 0. [Keep every promise you make and only make promises you can keep](./0-promise.js) :
 
 Return a Promise using this prototype function getResponseFromAPI()
@@ -433,8 +435,34 @@ bob@dylan:~$ npm run dev 8-main.js
 bob@dylan:~$ 
 ```
 
-## Tasks
+9. [Throw an error](./9-try.js) :
 
-| Task | File |
-| ---- | ---- |
-| 9. Throw an error | [9-try.js](./9-try.js) |
+Write a function named `guardrail` that will accept one argument `mathFunction` (Function).
+
+This function should create and return an array named `queue`.
+
+When the `mathFunction` function is executed, the value returned by the function should be appended to the queue. If this function throws an error, the error message should be appended to the queue. In every case, the message `Guardrail was processed` should be added to the queue.
+
+Example:
+
+```bash
+[
+  1000,
+  'Guardrail was processed',
+]
+```
+
+```bash
+bob@dylan:~$ cat 9-main.js
+import guardrail from './9-try';
+import divideFunction from './8-try';
+
+console.log(guardrail(() => { return divideFunction(10, 2)}));
+console.log(guardrail(() => { return divideFunction(10, 0)}));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 9-main.js 
+[ 5, 'Guardrail was processed' ]
+[ 'Error: cannot divide by 0', 'Guardrail was processed' ]
+bob@dylan:~$ 
+```
