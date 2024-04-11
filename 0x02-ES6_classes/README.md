@@ -283,9 +283,43 @@ Pricing {
 bob@dylan:~$ 
 ```
 
+5. [A Building](./5-building.js) :
+
+Implement a class named `Building`:
+
+- Constructor attributes:
+  - `sqft` (Number)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Implement a getter for each attribute.
+- Consider this class as an abstract class. And make sure that any class that extends from it should implement a method named `evacuationWarningMessage`.
+  - If a class that extends from it does not have a `evacuationWarningMessage` method, throw an error with the message `Class extending Building must override evacuationWarningMessage`
+
+```bash
+bob@dylan:~$ cat 5-main.js
+import Building from './5-building.js';
+
+const b = new Building(100);
+console.log(b);
+
+class TestBuilding extends Building {}
+
+try {
+    new TestBuilding(200)
+}
+catch(err) {
+    console.log(err);
+}
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 5-main.js 
+Building { _sqft: 100 }
+Error: Class extending Building must override evacuationWarningMessage
+    ...
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
-| 5. A Building | [5-building.js](./5-building.js) |
 | 6. Inheritance | [6-sky_high.js](./6-sky_high.js) |
 | 7. Airport | [7-airport.js](./7-airport.js) |
 | 8. Primitive - Holberton Class | [8-hbtn_class.js](./8-hbtn_class.js) |
