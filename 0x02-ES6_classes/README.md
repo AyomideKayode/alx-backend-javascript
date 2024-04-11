@@ -226,11 +226,65 @@ TypeError: Length must be a number
 bob@dylan:~$ 
 ```
 
+3. [Methods, static methods, computed methods names..... MONEY](./3-currency.js) :
+
+Implement a class named `Currency`:
+
+- - Constructor attributes:
+  - code (String)
+  - name (String)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Implement a getter and setter for each attribute.
+- Implement a method named `displayFullCurrency` that will return the attributes in the following format `name (code)`.
+
+```bash
+bob@dylan:~$ cat 3-main.js
+import Currency from "./3-currency.js";
+
+const dollar = new Currency('$', 'Dollars');
+console.log(dollar.displayFullCurrency());
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 3-main.js 
+Dollars ($)
+bob@dylan:~$ 
+```
+
+4. [Pricing](./4-pricing.js) :
+
+Import the class `Currency` from `3-currency.js`
+
+Implement a class named `Pricing`:
+
+- Constructor attributes:
+  - `amount` (Number)
+  - `currency` (Currency)
+- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+- Implement a getter and setter for each attribute.
+- Implement a method named `displayFullPrice` that returns the attributes in the following format `amount currency_name (currency_code)`.
+- Implement a static method named `convertPrice`. It should accept two arguments: `amount` (Number), `conversionRate` (Number). The function should return the amount multiplied by the conversion rate.
+
+```bash
+bob@dylan:~$ cat 4-main.js
+import Pricing from './4-pricing.js';
+import Currency from './3-currency.js';
+
+const p = new Pricing(100, new Currency("EUR", "Euro"))
+console.log(p);
+console.log(p.displayFullPrice());
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 4-main.js 
+Pricing {
+  _amount: 100,
+  _currency: Currency { _code: 'EUR', _name: 'Euro' }
+}
+100 Euro (EUR)
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
-|  |
-| 3. Methods, static methods, computed methods names..... MONEY | [3-currency.js](./3-currency.js) |
-| 4. Pricing | [4-pricing.js](./4-pricing.js) |
 | 5. A Building | [5-building.js](./5-building.js) |
 | 6. Inheritance | [6-sky_high.js](./6-sky_high.js) |
 | 7. Airport | [7-airport.js](./7-airport.js) |
