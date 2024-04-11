@@ -149,9 +149,34 @@ ayomide@Kazzywiz:~/alx-backend-javascript/0x02-ES6_classes$ npm run dev 0-main.j
 ayomide@Kazzywiz:~/alx-backend-javascript/0x02-ES6_classes$ 
 ```
 
+1. [Let's make some classrooms](./1-make_classrooms.js) :
+
+Import the `ClassRoom` class from `0-classroom.js`.
+
+Implement a function named `initializeRooms`. It should return an array of 3 `ClassRoom` objects with the sizes 19, 20, and 34 (in this order).
+
+```bash
+bob@dylan:~$ cat 1-main.js
+import initializeRooms from './1-make_classrooms.js';
+
+console.log(initializeRooms());
+
+bob@dylan:~$ 
+ayomide@Kazzywiz:~/alx-backend-javascript/0x02-ES6_classes$ npm run dev 1-main.js 
+
+> dev
+> npx babel-node 1-main.js
+
+[
+  ClassRoom { _maxStudentsSize: 19 },
+  ClassRoom { _maxStudentsSize: 20 },
+  ClassRoom { _maxStudentsSize: 34 }
+]
+ayomide@Kazzywiz:~/alx-backend-javascript/0x02-ES6_classes$  
+```
+
 | Task | File |
 | ---- | ---- |
-| 1. Let's make some classrooms | [1-make_classrooms.js](./1-make_classrooms.js) |
 | 2. A Course, Getters, and Setters | [2-hbtn_course.js](./2-hbtn_course.js) |
 | 3. Methods, static methods, computed methods names..... MONEY | [3-currency.js](./3-currency.js) |
 | 4. Pricing | [4-pricing.js](./4-pricing.js) |
