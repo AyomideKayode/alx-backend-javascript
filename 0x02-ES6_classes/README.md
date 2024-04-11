@@ -126,9 +126,31 @@ module.exports = {
 
 ## Tasks
 
+0. [You used to attend a place like this at some point](./0-classroom.js) :
+
+Implement a class named `ClassRoom`:
+
+- Prototype: `export default class ClassRoom`
+- It should accept one attribute named `maxStudentsSize` (Number) and assigned to `_maxStudentsSize`
+
+```bash
+bob@dylan:~$ cat 0-main.js
+import ClassRoom from "./0-classroom.js";
+
+const room = new ClassRoom(10);
+console.log(room._maxStudentsSize)
+
+ayomide@Kazzywiz:~/alx-backend-javascript/0x02-ES6_classes$ npm run dev 0-main.js 
+
+> dev
+> npx babel-node 0-main.js
+
+10
+ayomide@Kazzywiz:~/alx-backend-javascript/0x02-ES6_classes$ 
+```
+
 | Task | File |
 | ---- | ---- |
-| 0. You used to attend a place like this at some point | [0-classroom.js](./0-classroom.js) |
 | 1. Let's make some classrooms | [1-make_classrooms.js](./1-make_classrooms.js) |
 | 2. A Course, Getters, and Setters | [2-hbtn_course.js](./2-hbtn_course.js) |
 | 3. Methods, static methods, computed methods names..... MONEY | [3-currency.js](./3-currency.js) |
