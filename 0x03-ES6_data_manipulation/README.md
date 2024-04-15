@@ -93,11 +93,110 @@ bob@dylan:~$ npm run dev 2-main.js
 bob@dylan:~$ 
 ```
 
+3. [Reduce](./3-get_ids_sum.js) :
+
+Create a function `getStudentIdsSum` that returns the sum of all the student ids.
+
+It should accept a list of students (from `getListStudents`) as a parameter.
+
+You must use the `reduce` function on the array.
+
+```bash
+bob@dylan:~$ cat 3-main.js
+import getListStudents from "./0-get_list_students.js";
+import getStudentIdsSum from "./3-get_ids_sum.js";
+
+const students = getListStudents();
+const value = getStudentIdsSum(students);
+
+console.log(value);
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 3-main.js 
+8
+bob@dylan:~$ 
+```
+
+4. [Combine](./4-update_grade_by_city.js) :
+
+Create a function `updateStudentGradeByCity` that returns an array of students for a specific city with their new grade
+
+It should accept a list of students (from `getListStudents`), a `city` (String), and `newGrades` (Array of “grade” objects) as parameters.
+
+`newGrades` is an array of objects with this format:
+
+```bash
+  {
+    studentId: 31,
+    grade: 78,
+  }
+```
+
+If a student doesn’t have grade in `newGrades`, the final grade should be `N/A`.
+
+You must use `filter` and `map` combined.
+
+```bash
+bob@dylan:~$ cat 4-main.js
+import getListStudents from "./0-get_list_students.js";
+import updateStudentGradeByCity from "./4-update_grade_by_city.js";
+
+console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }, { studentId: 1, grade: 86 }]));
+
+console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }]));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 4-main.js 
+[
+  {
+    id: 1,
+    firstName: 'Guillaume',
+    location: 'San Francisco',
+    grade: 86
+  },
+  { id: 5, firstName: 'Serena', location: 'San Francisco', grade: 97 }
+]
+[
+  {
+    id: 1,
+    firstName: 'Guillaume',
+    location: 'San Francisco',
+    grade: 'N/A'
+  },
+  { id: 5, firstName: 'Serena', location: 'San Francisco', grade: 97 }
+]
+bob@dylan:~$ 
+```
+
+5. [Typed Arrays](./5-typed_arrays.js) :
+
+Create a function named `createInt8TypedArray` that returns a new `ArrayBuffer` with an `Int8` value at a specific position.
+
+It should accept three arguments: `length` (Number), `position` (Number), and `value` (Number).
+
+If adding the value is not possible the error `Position outside range` should be thrown.
+
+```bash
+bob@dylan:~$ cat 5-main.js
+import createInt8TypedArray from "./5-typed_arrays.js";
+
+console.log(createInt8TypedArray(10, 2, 89));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 5-main.js 
+DataView {
+  byteLength: 10,
+  byteOffset: 0,
+  buffer: ArrayBuffer {
+    [Uint8Contents]: <00 00 59 00 00 00 00 00 00 00>,
+    byteLength: 10
+  }
+}
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
-| 3. Reduce | [3-get_ids_sum.js](./3-get_ids_sum.js) |
-| 4. Combine | [4-update_grade_by_city.js](./4-update_grade_by_city.js) |
-| 5. Typed Arrays | [5-typed_arrays.js](./5-typed_arrays.js) |
 | 6. Set data structure | [6-set.js](./6-set.js) |
 | 7. More set data structure | [7-has_array_values.js](./7-has_array_values.js) |
 | 8. Clean set | [8-clean_set.js](./8-clean_set.js) |
