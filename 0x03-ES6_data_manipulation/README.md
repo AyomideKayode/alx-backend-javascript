@@ -195,9 +195,26 @@ DataView {
 bob@dylan:~$ 
 ```
 
+6. [Set data structure](./6-set.js):
+
+Create a function named `setFromArray` that returns a `Set` from an array.
+
+It accepts an argument (Array, of any kind of element).
+
+```bash
+bob@dylan:~$ cat 6-main.js
+import setFromArray from "./6-set.js";
+
+console.log(setFromArray([12, 32, 15, 78, 98, 15]));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 6-main.js 
+Set { 12, 32, 15, 78, 98 }
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
-| 6. Set data structure | [6-set.js](./6-set.js) |
 | 7. More set data structure | [7-has_array_values.js](./7-has_array_values.js) |
 | 8. Clean set | [8-clean_set.js](./8-clean_set.js) |
 | 9. Map data structure | [9-groceries_list.js](./9-groceries_list.js) |
