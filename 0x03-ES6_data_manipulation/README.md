@@ -213,9 +213,30 @@ Set { 12, 32, 15, 78, 98 }
 bob@dylan:~$ 
 ```
 
+7. [More set data structure](./7-has_array_values.js) :
+
+Create a function named `hasValuesFromArray` that returns a boolean if all the elements in the array exist within the set.
+
+It accepts two arguments: a `set` (Set) and an `array` (Array).
+
+```bash
+bob@dylan:~$ cat 7-main.js
+import hasValuesFromArray from "./7-has_array_values.js";
+
+console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [1]));
+console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [10]));
+console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [1, 10]));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 7-main.js 
+true
+false
+false
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
-| 7. More set data structure | [7-has_array_values.js](./7-has_array_values.js) |
 | 8. Clean set | [8-clean_set.js](./8-clean_set.js) |
 | 9. Map data structure | [9-groceries_list.js](./9-groceries_list.js) |
 | 10. More map data structure | [10-update_uniq_items.js](./10-update_uniq_items.js) |
