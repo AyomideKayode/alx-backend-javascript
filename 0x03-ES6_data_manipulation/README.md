@@ -1,14 +1,16 @@
 # Project: 0x03. ES6 data manipulation
 
+![Array Data Manipulation](./main-js_files/array_data-manipulation.jpg)
+
 ## Resources
 
 ### Read or watch:-
 
-- [Array](https://intranet.alxswe.com/rltoken/bcXqK1IaIHtrZ45sv0RxsQ)
-- [Typed Array](https://intranet.alxswe.com/rltoken/YZ5RtzAPTaWtF00MYbXuVw)
-- [Set Data Structure](https://intranet.alxswe.com/rltoken/Ch8vq39y9QnlTMr8CymgEg)
-- [Map Data Structure](https://intranet.alxswe.com/rltoken/W29MV3f8Ii4HmeJSALNIpw)
-* [WeakMap](https://intranet.alxswe.com/rltoken/pSetFVFeIR660GPE0flPdg)
+- [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [Typed Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays)
+- [Set Data Structure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+- [Map Data Structure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 
 ## Tasks
 
@@ -40,9 +42,34 @@ bob@dylan:~$ npm run dev 0-main.js
 bob@dylan:~$ 
 ```
 
+1. [More mapping](./1-get_list_student_ids.js) :
+
+Create a function `getListStudentIds` that returns an array of ids from a list of object.
+
+This function is taking one argument which is an array of objects - and this array is the same format as `getListStudents` from the previous task.
+
+If the argument is not an array, the function is returning an empty array.
+
+You must use the `map` function on the array.
+
+```bash
+bob@dylan:~$ cat 1-main.js
+import getListStudentIds from "./1-get_list_student_ids.js";
+import getListStudents from "./0-get_list_students.js";
+
+console.log(getListStudentIds("hello"));
+console.log(getListStudentIds(getListStudents()));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 1-main.js 
+[]
+[ 1, 2, 5 ]
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
-| 1. More mapping | [1-get_list_student_ids.js](./1-get_list_student_ids.js) |
+|  |
 | 2. Filter | [2-get_students_by_loc.js](./2-get_students_by_loc.js) |
 | 3. Reduce | [3-get_ids_sum.js](./3-get_ids_sum.js) |
 | 4. Combine | [4-update_grade_by_city.js](./4-update_grade_by_city.js) |
