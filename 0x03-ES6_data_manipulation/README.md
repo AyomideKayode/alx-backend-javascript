@@ -259,6 +259,36 @@ bob@dylan:~$
 
 9. [Map data structure](./9-groceries_list.js):
 
+Create a function named `groceriesList` that returns a map of groceries with the following items (name, quantity):
+
+```bash
+Apples, 10
+Tomatoes, 10
+Pasta, 1
+Rice, 1
+Banana, 5
+```
+
+Result:
+
+```bash
+bob@dylan:~$ cat 9-main.js
+import groceriesList from "./9-groceries_list.js";
+
+console.log(groceriesList());
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 9-main.js 
+Map {
+  'Apples' => 10,
+  'Tomatoes' => 10,
+  'Pasta' => 1,
+  'Rice' => 1,
+  'Banana' => 5
+}
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
 | 10. More map data structure | [10-update_uniq_items.js](./10-update_uniq_items.js) |
