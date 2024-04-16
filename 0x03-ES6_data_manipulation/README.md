@@ -289,6 +289,61 @@ Map {
 bob@dylan:~$ 
 ```
 
-| Task | File |
-| ---- | ---- |
-| 10. More map data structure | [10-update_uniq_items.js](./10-update_uniq_items.js) |
+10. [More map data structure](./10-update_uniq_items.js):
+
+Create a function named `updateUniqueItems` that returns an updated map for all items with initial quantity at 1.
+
+It should accept a map as an argument. The map it accepts for argument is similar to the map you create in the previous task.
+
+For each entry of the map where the quantity is 1, update the quantity to 100. If updating the quantity is not possible (argument is not a map) the error `Cannot process` should be thrown.
+
+```bash
+bob@dylan:~$ cat 10-main.js
+import updateUniqueItems from "./10-update_uniq_items.js";
+import groceriesList from "./9-groceries_list.js";
+
+const map = groceriesList();
+console.log(map);
+
+updateUniqueItems(map)
+console.log(map);
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 10-main.js 
+Map {
+  'Apples' => 10,
+  'Tomatoes' => 10,
+  'Pasta' => 1,
+  'Rice' => 1,
+  'Banana' => 5
+}
+Map {
+  'Apples' => 10,
+  'Tomatoes' => 10,
+  'Pasta' => 100,
+  'Rice' => 100,
+  'Banana' => 5
+}
+bob@dylan:~$ 
+```
+
+---
+
+### Environment
+
+- Language: JavaScript
+  - Node Version: 12.11.1
+  - OS: Ubuntu 20.04 LTS
+  - Style guidelines:
+    - [Javascript Semistandard](https://github.com/standard/semistandard) `sudo npm install semistandard --global`
+    - [Eslint Standard](https://eslint.org/) `npx eslint nameoffile.js`
+  - [Install Semistandard - Note](../0x12-javascript-warm_up/README.md)
+    - [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript)
+
+---
+
+## Author
+
+- _Website_ - [Ayomide Kayode](https://github.com/AyomideKayode)
+- _ALX Software Engineering Program_ - [ALX_AFRICA](https://www.alxafrica.com/programmes/)
+- _Twitter_ - [@kazzy_wiz](https://www.twitter.com/kazzy_wiz)
