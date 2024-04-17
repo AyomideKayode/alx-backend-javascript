@@ -3,7 +3,7 @@ export default function groceriesList() {
   const groceriesMap = new Map();
 
   // Add groceries to the map with their quantities
-  groceriesMap.set('Apple', 10); // 10 Apples
+  groceriesMap.set('Apples', 10); // 10 Apples
   groceriesMap.set('Tomatoes', 10); // 10 Tomatoes
   groceriesMap.set('Pasta', 1); // 1 Pasta
   groceriesMap.set('Rice', 1); // 1 Rice
