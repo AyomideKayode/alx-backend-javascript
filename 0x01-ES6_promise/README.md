@@ -45,6 +45,8 @@ Add the files below to your project directory
 
 <details>
 <summary>Click to show/hide file contents</summary>
+
+```bash
 {
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
@@ -64,12 +66,16 @@ Add the files below to your project directory
     "jest": "^24.9.0"
   }
 }
+```
+
 </details>
 
 ### `babel.config.js`
 
 <details>
 <summary>Click to show/hide file contents</summary>
+
+```bash
 module.exports = {
   presets: [
     [
@@ -82,12 +88,16 @@ module.exports = {
     ],
   ],
 };
+```
+
 </details>
 
 ### `utils.js`
 
 <details>
 <summary>Click to show/hide file contents</summary>
+
+```bash
 export function uploadPhoto() {
   return Promise.resolve({
     status: 200,
@@ -101,12 +111,16 @@ export function createUser() {
     lastName: 'Salva',
   });
 }
+```
+
 </details>
 
 ### `.eslintrc.js`
 
 <details>
 <summary>Click to show/hide file contents</summary>
+
+```bash
 module.exports = {
   env: {
     browser: false,
@@ -142,6 +156,8 @@ module.exports = {
     }
   ]
 };
+```
+
 </details>
 
 - Don't forget to run npm install to install the dependencies specified in package.json.
