@@ -172,7 +172,7 @@ module.exports = {
 
 </details>
 
-- Don't forget to run npm install to install the dependencies specified in package.json.
+- Don't forget to run `npm install` to install the dependencies specified in package.json.
 
 ## Tasks
 
