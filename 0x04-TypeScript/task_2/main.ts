@@ -11,7 +11,7 @@ interface DirectorInterface {
 interface TeacherInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
-  workDirectorTasks(): string;
+  workTeacherTasks(): string;
 }
 
 // Define Director class implementing DirectorInterface
@@ -39,7 +39,7 @@ class Teacher implements TeacherInterface {
     return "Cannot have a break"
   }
 
-  workDirectorTasks(): string {
+  workTeacherTasks(): string {
     return "Getting to work"
   }
 }
@@ -50,5 +50,19 @@ function createEmployee(salary: number | string): Director | Teacher {
     return new Teacher();
   } else {
     return new Director();
+  }
+}
+
+// Define the isDirector type predicate function
+function isDirector(employee: Director | Teacher): employee is Director {
+  return (employee as Director).workDirectorTasks !== undefined;
+}
+
+// Define the executeWork function
+function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  } else {
+    return (employee as Teacher).workTeacherTasks();
   }
 }
