@@ -15,9 +15,23 @@
 
 ## Tasks
 
+### 0. [Executing basic javascript with Node JS](./0-console.js) :-
+
+In the file 0-console.js, create a function named displayMessage that prints in STDOUT the string argument.
+
+```bash
+bob@dylan:~$ cat 0-main.js
+const displayMessage = require('./0-console');
+
+displayMessage("Hello NodeJS!");
+
+bob@dylan:~$ node 0-main.js
+Hello NodeJS!
+bob@dylan:~$
+```
+
 | Task | File |
 | ---- | ---- |
-| 0. Executing basic javascript with Node JS | [0-console.js](./0-console.js) |
 | 1. Using Process stdin | [1-stdin.js](./1-stdin.js) |
 | 2. Reading a file synchronously with Node JS | [2-read_file.js](./2-read_file.js) |
 | 3. Reading a file asynchronously with Node JS | [3-read_file_async.js](./3-read_file_async.js) |
