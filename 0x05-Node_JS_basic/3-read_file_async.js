@@ -42,7 +42,7 @@ function countStudents(path) {
           console.log(
             `Number of students in ${field}: ${
               names.length
-            }. List: ${names.join(', ')}`
+            }. List: ${names.join(', ')}`,
           );
         }
         // Resolve the promise after logging
