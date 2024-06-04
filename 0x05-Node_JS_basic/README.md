@@ -146,9 +146,34 @@ Tips:
 
 Using asynchronous callbacks is the preferred way to write code in Node to avoid blocking threads
 
+### 4. [Create a small HTTP server using Node's HTTP module](./4-http.js) :-
+
+In a file named `4-http.js`, create a small HTTP server using the `http` module:
+
+- It should be assigned to the variable `app` and this one must be exported
+- HTTP server should listen on port 1245
+- Displays `Hello Holberton School!` in the page body for any endpoint as plain text
+
+In terminal 1:
+
+```bash
+bob@dylan:~$ node 4-http.js
+...
+```
+
+In terminal 2:
+
+```bash
+bob@dylan:~$ curl localhost:1245 && echo ""
+Hello Holberton School!
+bob@dylan:~$ 
+bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
+Hello Holberton School!
+bob@dylan:~$ 
+```
+
 | Task | File |
 | ---- | ---- |
-| 4. Create a small HTTP server using Node's HTTP module | [4-http.js](./4-http.js) |
 | 5. Create a more complex HTTP server using Node's HTTP module | [5-http.js](./5-http.js) |
 | 6. Create a small HTTP server using Express | [6-http_express.js](./6-http_express.js) |
 | 7. Create a more complex HTTP server using Express | [7-http_express.js](./7-http_express.js) |
