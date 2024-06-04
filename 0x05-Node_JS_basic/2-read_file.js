@@ -8,7 +8,7 @@ const fs = require('fs');
  * @throws {Error} - If the file does not contain student data, throw error
  */
 
-function countStudents (path) {
+function countStudents(path) {
   try {
     // read file content asynchronously
     const data = fs.readFileSync(path, 'utf8');
