@@ -256,6 +256,7 @@ Terminal 1:
 bob@dylan:~$ node 7-http_express.js database.csv
 ...
 ```
+
 In terminal 2:
 
 ```bash
@@ -270,6 +271,4 @@ Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 bob@dylan:~$ 
 ```
 
-| Task | File |
-| ---- | ---- |
-| 8. Organize a complex HTTP server using Express | [full_server/utils.js](./full_server/utils.js), [full_server/controllers/AppController.js](./full_server/controllers/AppController.js), [full_server/controllers/StudentsController.js](./full_server/controllers/StudentsController.js), [full_server/routes/index.js](./full_server/routes/index.js), [full_server/server.js](./full_server/server.js) |
+### 8. [Organize a complex HTTP server using Express] | [full_server/utils.js](./full_server/utils.js), [full_server/controllers/AppController.js](./full_server/controllers/AppController.js), [full_server/controllers/StudentsController.js](./full_server/controllers/StudentsController.js), [full_server/routes/index.js](./full_server/routes/index.js), [full_server/server.js](./full_server/server.js) |
