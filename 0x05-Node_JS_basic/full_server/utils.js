@@ -2,7 +2,6 @@
 // create utility function to read database asynchronously
 
 import fs from 'fs';
-import path from 'path';
 
 function readDatabase(filePath) {
   return new Promise((resolve, reject) => {
@@ -21,7 +20,8 @@ function readDatabase(filePath) {
 
       students.forEach((student) => {
         const [firstName, , , field] = student.split(','); // extract firstName and field from each student record
-        if (!fields[field]) fields[field] = []; // create an array for each field if it doesn't exist
+        // create an array for each field if it doesn't exist
+        if (!fields[field]) fields[field] = [];
         fields[field].push(firstName); // add firstName to corresponding field array
       });
 

@@ -2,7 +2,7 @@
 // setup server to use the defined routes
 
 const express = require('express');
-const router = require('./routes/index.js');
+const router = require('./routes/index');
 
 const app = express();
 const port = 1245;
