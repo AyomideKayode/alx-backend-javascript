@@ -3,6 +3,7 @@
 
 const expect = require('chai').expect;
 const { describe, it } = require('mocha');
+const assert = require('assert');
 const calculateNumber = require('./2-calcul_chai');
 
 // Test suite for calculateNumber with different operations
@@ -14,14 +15,14 @@ describe('calculateNumber', function () {
   });
 
   describe('SUBTRACT operation', function () {
-    it('should return 3 when inputs are 1 and 3.7', function () {
-      expect(calculateNumber('SUBTRACT', 1, 3.7)).to.equal(3);
+    it('should return -3 when inputs are 1 and 3.7', function () {
+      expect(calculateNumber('SUBTRACT', 1, 3.7)).to.equal(-3);
     });
   });
 
   describe('DIVIDE operation', function () {
-    it('should return 3.5 when inputs are 1.7 and 6.9', function () {
-      expect(calculateNumber('DIVIDE', 1.7, 6.9)).to.equal(3.5);
+    it('should return 3.5 when inputs are 6.9 and 1.7', function () {
+      expect(calculateNumber('DIVIDE', 6.9, 1.7)).to.equal(3.5);
     });
 
     it('should return "Error" when inputs are 1.4 and 0', function () {
