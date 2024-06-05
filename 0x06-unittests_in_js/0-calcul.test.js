@@ -1,6 +1,7 @@
 // file to contain test cases of the calculateNumber function
 
 const assert = require('assert');
+const { describe, it} = require('mocha');
 const calculateNumber = require('./0-calcul');
 
 // Testsuite for calculateNumber function

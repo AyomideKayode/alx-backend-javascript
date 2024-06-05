@@ -1,15 +1,8 @@
 {
-  "name": "0x06-unittests_in_js",
-  "version": "1.0.0",
-  "description": "![Can't Skip Tests](./js_unittests.jpeg)",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "mocha": "^10.4.0"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
