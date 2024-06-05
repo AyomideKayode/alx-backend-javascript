@@ -251,9 +251,66 @@ Look into how to support async testing, for example when waiting for the answer 
 - Every test should pass without any warning
 - You should use the `done` callback to execute this test
 
+### 7. Skip | [7-skip.test.js](./7-skip.test.js) :-
+
+When you have a long list of tests, and you can’t figure out why a test is breaking, avoid commenting out a test, or removing it. Skip it instead, and file a ticket to come back to it as soon as possible
+
+You will be using this file, conveniently named `7-skip.test.js`
+
+```bash
+const { expect } = require('chai');
+
+describe('Testing numbers', () => {
+  it('1 is equal to 1', () => {
+    expect(1 === 1).to.be.true;
+  });
+
+  it('2 is equal to 2', () => {
+    expect(2 === 2).to.be.true;
+  });
+
+  it('1 is equal to 3', () => {
+    expect(1 === 3).to.be.true;
+  });
+
+  it('3 is equal to 3', () => {
+    expect(3 === 3).to.be.true;
+  });
+
+  it('4 is equal to 4', () => {
+    expect(4 === 4).to.be.true;
+  });
+
+  it('5 is equal to 5', () => {
+    expect(5 === 5).to.be.true;
+  });
+
+  it('6 is equal to 6', () => {
+    expect(6 === 6).to.be.true;
+  });
+
+  it('7 is equal to 7', () => {
+    expect(7 === 7).to.be.true;
+  });
+});
+```
+
+**Using the file `7-skip.test.js`:**
+
+- Make the test suite pass without fixing or removing the failing test
+- `it` description must stay the same
+
+**Tips:**
+
+- Skipping is also very helpful when you only want to execute the test in a particular case (specific environment, or when an API is not behaving correctly)
+
+**Requirements:**
+
+- You should be able to run the test suite using `npm test 7-skip.test.js`
+- Every test should pass without any warning
+
 | Task | File |
 | ---- | ---- |
-| 7. Skip | [7-skip.test.js](./7-skip.test.js) |
 | 8. Basic Integration testing | [8-api/package.json](./8-api/package.json), [8-api/api.js](./8-api/api.js), [8-api/api.test.js](./8-api/api.test.js) |
 | 9. Regex integration testing | [9-api/api.js](./9-api/api.js), [9-api/api.test.js](./9-api/api.test.js), [9-api/package.json](./9-api/package.json) |
 | 10. Deep equality & Post integration testing | [10-api/api.js](./10-api/api.js), [10-api/api.test.js](./10-api/api.test.js), [10-api/package.json](./10-api/package.json) |
