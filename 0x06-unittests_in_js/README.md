@@ -19,6 +19,10 @@
 
 **Install Mocha using npm:**
 
+```bash
+npm install mocha --save-dev
+```
+
 - Set up a scripts in your `package.json` to quickly run Mocha using `npm test`
 - You have to use `assert`
 
@@ -118,9 +122,32 @@ Expected output
 'Error'
 ```
 
+### 2. Basic test using Chai assertion library | [2-calcul_chai.js](./2-calcul_chai.js), [2-calcul_chai.test.js](./2-calcul_chai.test.js) :-
+
+While using Node assert library is completely valid, a lot of developers prefer to have a behavior driven development style. This type being easier to read and therefore to maintain.
+
+**Let’s install Chai with npm:**
+
+```bash
+npm install chai --save-dev
+```
+
+- Copy the file `1-calcul.js` in a new file `2-calcul_chai.js` (same content, same behavior)
+- Copy the file `1-calcul.test.js` in a new file `2-calcul_chai.test.js`
+- Rewrite the test suite, using `expect` from `Chai`
+
+**Tips:**
+
+- Remember that test coverage is always difficult to maintain. Using an easier style for your tests will help you
+- The easier your tests are to read and understand, the more other engineers will be able to fix them when they are modifying your code
+
+**Requirements:**
+
+- You should be able to run the test suite using `npm test 2-calcul_chai.test.js`
+- Every test should pass without any warning
+
 | Task | File |
 | ---- | ---- |
-| 2. Basic test using Chai assertion library | [2-calcul_chai.js](./2-calcul_chai.js), [2-calcul_chai.test.js](./2-calcul_chai.test.js) |
 | 3. Spies | [utils.js](./utils.js), [3-payment.js](./3-payment.js), [3-payment.test.js](./3-payment.test.js) |
 | 4. Stubs | [4-payment.js](./4-payment.js), [4-payment.test.js](./4-payment.test.js) |
 | 5. Hooks | [5-payment.js](./5-payment.js), [5-payment.test.js](./5-payment.test.js) |
