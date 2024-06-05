@@ -1,9 +1,7 @@
 // file to contain test cases of the updated calculateNumber function
 // using the Chai assertion library
-// const expect = require("chai").expect;
 
-const chai = require('chai');
-const expect = chai.expect;
+const expect = require('chai').expect;
 const { describe, it } = require('mocha');
 const calculateNumber = require('./2-calcul_chai');
 
