@@ -203,9 +203,31 @@ Tips:
 - Using stubs allows you to greatly speed up your test. When executing thousands of tests, saving a few seconds is important
 - Using stubs allows you to control specific edge case (e.g a function throwing an error or returning a specific result like a number or a timestamp)
 
+### 5. Hooks | [5-payment.js](./5-payment.js), [5-payment.test.js](./5-payment.test.js) :-
+
+Hooks are useful functions that can be called before execute one or all tests in a suite
+
+**Copy the code from `4-payment.js` into a new file `5-payment.js`:** (same content/same behavior)
+
+**Create a new file `5-payment.test.js`:**
+
+- Inside the same `describe`, create 2 tests:
+  - The first test will call `sendPaymentRequestToAPI` with 100, and 20:
+    - Verify that the console is logging the string `The total is: 120`
+    - Verify that the console is only called once
+  - The second test will call `sendPaymentRequestToAPI` with 10, and 10:
+    - Verify that the console is logging the string `The total is: 20`
+    - Verify that the console is only called once
+
+**Requirements:**
+
+- You should be able to run the test suite using `npm test 5-payment.test.js`
+- Every test should pass without any warning
+- You should use only one `spy` to complete this exercise
+- You should use a `beforeEach` and a `afterEach` hooks to complete this exercise
+
 | Task | File |
 | ---- | ---- |
-| 5. Hooks | [5-payment.js](./5-payment.js), [5-payment.test.js](./5-payment.test.js) |
 | 6. Async tests with done | [6-payment_token.js](./6-payment_token.js), [6-payment_token.test.js](./6-payment_token.test.js) |
 | 7. Skip | [7-skip.test.js](./7-skip.test.js) |
 | 8. Basic Integration testing | [8-api/package.json](./8-api/package.json), [8-api/api.js](./8-api/api.js), [8-api/api.test.js](./8-api/api.test.js) |
