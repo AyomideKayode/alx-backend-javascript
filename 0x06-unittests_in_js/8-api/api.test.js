@@ -1,34 +1,10 @@
 const request = require('request');
 const { describe, it } = require('mocha');
 const expect = require('chai').expect;
-const app = require('./api');
+const server = require('./api'); // Ensure the server is imported so it starts when the tests run
 
-describe('Index page', function () {
-  const options = {
-    url: 'http://localhost:7865/',
-    method: 'GET',
-  };
-  it('check correct status code', function (done) {
-    request(options, function (err, res, body) {
-      expect(res.statusCode).to.equal(200);
-      done();
-    });
-  });
-  it('check correct content', function (done) {
-    request(options, function (err, res, body) {
-      expect(body).to.contain('Welcome to the payment system');
-      done();
-    });
-  });
-  it('check correct content length', function (done) {
-    request(options, function (err, res, body) {
-      expect(res.headers['content-length']).to.equal('29');
-      done();
-    });
-  });
-});
 
-describe('Index page2', () => {
+describe('Index page', () => {
   const url = 'http://localhost:7865/';
 
   it('should return status code 200', (done) => {
@@ -43,5 +19,9 @@ describe('Index page2', () => {
       expect(body).to.equal('Welcome to the payment system');
       done();
     });
+  });
+
+  after((done) => {
+    server.close(done); // Close the server after all tests
   });
 });
