@@ -11,7 +11,7 @@ app.get('/', (request, response) => {
 });
 
 const server = app.listen(port, () => {
-  console.log(`API available on localhost port ${port}`);
+  console.log("API available on localhost port 7865");
 });
 
 module.exports = server; // Export the server instance
